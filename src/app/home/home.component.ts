@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IAnime } from '../shared/Interfaces/anime';
+import { AnimeService } from '../shared/services/anime.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  animeList: IAnime[] =[]
+  constructor(private myService: AnimeService) { 
+
+    this.myService.getAllAnime()
+      .subscribe((res : any) => {
+        this.animeList = res;
+    })
+
+  }
 
   ngOnInit(): void {
   }

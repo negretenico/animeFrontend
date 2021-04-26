@@ -15,7 +15,8 @@
       <li><a href="#">Page 2</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li>    <form class="navbar-form navbar-left" action="/action_page.php">
+      <li>    
+        <form class="navbar-form navbar-left" action="/action_page.php">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="search">
         </div>
@@ -23,8 +24,13 @@
       </form>
     
   </li>
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+  <li class="nav-item"routerLinkActive = "active">
+    <a class="nav-link" routerLink="login">Login</a>
+  </li>
+  <li class="nav-item"routerLinkActive = "active">
+    <a class="nav-link" routerLink="signup">Sign Up</a>
+  </li>
+
     </ul>
   </div>
 </nav>
