@@ -10,6 +10,8 @@ import { AnimeService } from '../shared/services/anime.service';
 export class HomeComponent implements OnInit {
 
   animeList: IAnime[] =[]
+  isReadMore = true
+
   constructor(private myService: AnimeService) { 
 
     this.myService.getAllAnime()
@@ -22,4 +24,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showText() {
+     this.isReadMore = !this.isReadMore
+  }
 }

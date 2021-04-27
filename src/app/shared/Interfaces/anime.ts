@@ -2,9 +2,12 @@
 export interface IAnime {
     Name: string,
     Genre: string,
-    Score: string,
-    Episodes: string,
+    Rating: number,
+    CrunchyRollUrl: string,
+    ImageUrl: string,
+    Episodes: number,
+    Duration: string,
     Producers: string,
-    Rating: string,
-    Duration: string
+    Studio: String,
+    Description: String
 }

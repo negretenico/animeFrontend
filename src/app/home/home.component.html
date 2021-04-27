@@ -1,4 +1,19 @@
 <h1>Popular Anime</h1>
-<div class = "container" *ngFor = "let anime of  animeList">
-<p>{{anime.Name}}</p>
+
+
+
+  <div class="row" >
+    <div class="col-sm-4" *ngFor = "let anime of  animeList">
+        <div class="card my-3 text-white bg-dark mb-3"  style="width: 18rem;">
+            <img src={{anime.ImageUrl}} class="card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title">{{anime.Name}}</h5>
+              <p  [ngClass]="{'limitTextHeight': isReadMore}" class="card-text">{{anime.Description}}</p>
+              <button type="button" (click)="showText()">
+                {{ isReadMore ? 'Read More': 'Read Less' }}
+              </button>
+              <a href={{anime.CrunchyRollUrl}} class="btn btn-primary">Watch Now! cx</a>
+            </div>
+          </div>
+    </div>
 </div>
