@@ -7,7 +7,7 @@ import { IAnime } from '../Interfaces/anime';
   providedIn: 'root'
 })
 export class AnimeService {
-   apiLink: string = "http://localhost:5000/api";
+   animeLink: string = "http://localhost:5000/api/anime";
 
   constructor(private http:HttpClient) { 
 
@@ -15,6 +15,6 @@ export class AnimeService {
   
   getAllAnime():Observable<IAnime>
   {
-    return this.http.get<IAnime>(this.apiLink);
+    return this.http.get<IAnime>(this.animeLink);
   }
 }

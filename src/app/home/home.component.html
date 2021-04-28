@@ -3,11 +3,11 @@
 
 
   <div class="row" >
-    <div class="col-sm-4" *ngFor = "let anime of  animeList">
-        <div class="card my-3 text-white bg-dark mb-3"  style="width: 18rem;">
+    <div class="col-sm-5" *ngFor = "let anime of  animeList">
+        <div class="card my-3 text-white bg-dark mb-3" >
             <img src={{anime.ImageUrl}} class="card-img-top" >
             <div class="card-body">
-              <h5 class="card-title">{{anime.Name}}</h5>
+              <h3 class="card-title">{{anime.Name}}</h3>
               <p  [ngClass]="{'limitTextHeight': isReadMore}" class="card-text">{{anime.Description}}</p>
               <button type="button" (click)="showText()">
                 {{ isReadMore ? 'Read More': 'Read Less' }}
