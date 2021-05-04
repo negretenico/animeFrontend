@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { IAnime } from '../shared/Interfaces/anime';
 import { AnimeService } from '../shared/services/anime.service';
@@ -10,6 +11,7 @@ import { AnimeService } from '../shared/services/anime.service';
 export class HomeComponent implements OnInit {
 
   animeList: IAnime[] =[]
+  imageObjects: Object[] = []
   isReadMore = true
 
   constructor(private myService: AnimeService) { 
@@ -17,6 +19,13 @@ export class HomeComponent implements OnInit {
     this.myService.getAllAnime()
       .subscribe((res : any) => {
         this.animeList = res;
+        this.animeList.forEach((anime)=> 
+        {
+          this.imageObjects.push({
+            title:anime.Name,
+            image: anime.ImageUrl,
+            thumbImage:  anime.ImageUrl,})
+        })
     })
 
   }
@@ -27,4 +36,14 @@ export class HomeComponent implements OnInit {
   showText() {
      this.isReadMore = !this.isReadMore
   }
+
+  goToLink(event: Object)
+  {
+
+    window.open(this.animeList[Number(event)].CrunchyRollUrl, "_blank");
+
+    console.log(this.animeList[Number(event)]);
+  }
+
+
 }
